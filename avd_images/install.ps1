@@ -1,3 +1,8 @@
-# install.ps1
-winget install -e --id Greenshot.Greenshot --accept-source-agreements --accept-package-agreements
+Set-ExecutionPolicy Bypass -Scope Process -Force
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+choco install greenshot -y --verbose --debug
+choco install 7zip.install -y --verbose --debug
+
 
