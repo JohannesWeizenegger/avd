@@ -4,8 +4,8 @@ choco install 7zip -y --accept-package-agreements --accept-source-agreements
 
 
 param(
-[string]$STORAGE_ACCESS_KEY
-[string]$STORAGE_ACCOUNT_NAME
+[string]$STORAGE_ACCESS_KEY,
+[string]$STORAGE_ACCOUNT_NAME,
 [string]$SHARE_NAME
 )
 
