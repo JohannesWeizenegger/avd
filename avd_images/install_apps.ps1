@@ -22,3 +22,6 @@ icacls z: /remove "Builtin\Users"
 $regPath = "HKLM:\SOFTWARE\FSLogix\profiles"
 New-ItemProperty -Path $regPath -Name Enabled -PropertyType DWORD -Value 1 -Force
 New-ItemProperty -Path $regPath -Name VHDLocations -PropertyType MultiString -Value \\$STORAGE_ACCOUNT_NAME.file.core.windows.net\$SHARE_NAME -Force
+
+# Restart the VM to apply changes
+shutdown /r /t 0
