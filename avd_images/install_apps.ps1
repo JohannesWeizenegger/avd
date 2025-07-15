@@ -1,13 +1,13 @@
-# install applications
-choco install 7zip -y --accept-package-agreements --accept-source-agreements
-
-
-
 param(
 [string]$STORAGE_ACCESS_KEY,
 [string]$STORAGE_ACCOUNT_NAME,
 [string]$SHARE_NAME
 )
+
+
+# install applications
+choco install 7zip -y --accept-package-agreements --accept-source-agreements
+
 
 # Prepare VM for FSLogix
 reg add HKLM\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Parameters /v CloudKerberosTicketRetrievalEnabled /t REG_DWORD /d 1
