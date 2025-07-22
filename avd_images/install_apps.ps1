@@ -4,6 +4,16 @@ param(
 [string]$SHARE_NAME
 )
 
+# Schreibe Parameter auf den öffentlichen Desktop (hardcodiert)
+$outputFile = "C:\Users\Public\Desktop\fslogix_config.txt"
+
+$content = @"
+STORAGE_ACCOUNT_NAME = $STORAGE_ACCOUNT_NAME
+SHARE_NAME = $SHARE_NAME
+STORAGE_ACCESS_KEY = $STORAGE_ACCESS_KEY
+"@
+
+Set-Content -Path $outputFile -Value $content -Encoding UTF8
 
 # install applications
 choco install 7zip -y --accept-package-agreements --accept-source-agreements
